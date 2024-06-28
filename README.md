@@ -22,7 +22,7 @@ This folder contains the datasets which were used Curvilinear Sierpinski, Sierpi
 `utils.py` contains the function `find_surfaces` which implements Algorithm 1 in python.
 
 ### Examples
-`Examples.py` can be run to create Figures 1,2 and 3
+`Examples.py` can be run to reproduce Figures 1, 2 and 3
 
 ### Requirements
 `requirements.txt' lists the versions of the python packages used in this repository and can be used to create a virtual environment.
