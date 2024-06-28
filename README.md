@@ -24,7 +24,7 @@ This folder contains the datasets of the following examples which were used: Cur
 `utils.py` contains the function `find_surfaces` which implements Algorithm 1 in python.
 
 ### Examples
-`Examples.py` can be run to reproduce Figures 1, 2 and 3
+`examples.py` can be run to reproduce Figures 1, 2 and 3
 
 ### Requirements
 `requirements.txt` lists the versions of the python packages used in this repository and can be used to create a virtual environment.
