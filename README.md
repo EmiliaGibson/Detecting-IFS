@@ -25,4 +25,4 @@ This folder contains the datasets which were used Curvilinear Sierpinski, Sierpi
 `Examples.py` can be run to reproduce Figures 1, 2 and 3
 
 ### Requirements
-`requirements.txt' lists the versions of the python packages used in this repository and can be used to create a virtual environment.
+`requirements.txt` lists the versions of the python packages used in this repository and can be used to create a virtual environment.
