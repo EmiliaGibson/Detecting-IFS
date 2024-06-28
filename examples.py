@@ -5,7 +5,7 @@ from utils import find_surfaces
 
 datasets = ['Curvilinear-Sierpinski-data.npy','Henon-data.npy','Sierpinski-data.npy','Logistic-data.npy']
 
-#dictionary with parameters for each dataset
+#dictionary with algorithms parameters for each dataset
 dataset_kwargs = {
     'Curvilinear-Sierpinski-data.npy': {
         "delta":0.15,
