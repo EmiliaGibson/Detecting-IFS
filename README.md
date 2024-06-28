@@ -18,4 +18,11 @@ This repository contains code written for investigations into the detection and 
 ### Data
 This folder contains the datasets which were used Curvilinear Sierpinski, Sierpinski and Henon. An additional example containng a faimily of logistic maps is also included.
 
-#### utils.py
+### utils
+`utils.py` contains the function `find_surfaces` which implements Algorithm 1 in python.
+
+### Examples
+`Examples.py` can be run to create Figures 1,2 and 3
+
+### Requirements
+`requirements.txt' lists the versions of the python packages used in this repository and can be used to create a virtual environment.
