@@ -33,7 +33,7 @@ dataset = datasets[key]
 #load dataset
 data = np.load('Data/' + datasets[key])
 
-#embed the data to higher dimension
+#embed the data to higher dimension (here we choose the first coordinate map with the input data[1:,0])
 embedded_data = np.column_stack((data[:-1,:],data[1:,0]))
 
 #apply separation algorithm
