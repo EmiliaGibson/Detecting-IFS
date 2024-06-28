@@ -31,7 +31,7 @@ assert key in [0,1,2,3]
 dataset = datasets[key]
 
 #load dataset
-data = np.load(datasets[key])
+data = np.load('Data/' + datasets[key])
 
 #embed the data to higher dimension
 embedded_data = np.column_stack((data[:-1,:],data[1:,0]))
