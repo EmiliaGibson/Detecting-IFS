@@ -15,3 +15,7 @@ This repository contains code written for investigations into the detection and 
 ├── requirements.txt
 ├── utils.py
 ```
+### Data
+This folder contains the datasets which were used Curvilinear Sierpinski, Sierpinski and Henon. An additional example containng a faimily of logistic maps is also included.
+
+#### utils.py
