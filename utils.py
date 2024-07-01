@@ -101,12 +101,8 @@ def find_surfaces(X,delta = 0.05,theta = 0.1, progress_updates=True):
         else:
             NNs = indices[0]
             points = [X[j,:] for j in NNs]
-            # i1 = indices[0][1]
-            # i2 = indices[0][2]
             S.extend(points[1:])
             normal = find_orth(points[:-1]-points[-1])
-            # np.cross((X[i1,:] - X[i2,:])/np.linalg.norm(X[i1,:] -X[i2,:]),
-            #                   (X[i,:] - X[i2,:])/np.linalg.norm(X[i,:] -X[i2,:]))
             Q = Q.drop(NNs)
             normals += [normal for j in list(range(d-1))]
             i = points[-1]
