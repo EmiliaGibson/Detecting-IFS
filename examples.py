@@ -1,6 +1,5 @@
 import numpy as np
 import matplotlib.pyplot as plt
-import os
 from utils import find_surfaces
 
 datasets = ['Curvilinear-Sierpinski-data.npy','Henon-data.npy','Sierpinski-data.npy','Logistic-data.npy']
