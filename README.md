@@ -18,7 +18,7 @@ This repository is structured as follows:
 └──  utils.py
 ```
 ### Data
-This folder contains the datasets of the following examples which were used: Curvilinear Sierpinski, Sierpinski and Henon. An additional example containng a faimily of logistic maps is also included.
+This folder contains the datasets of the following examples which were used: Curvilinear Sierpinski, Sierpinski and Henon. An additional example containing a faimily of logistic maps is also included.
 
 ### utils
 `utils.py` contains the function `find_surfaces` which implements Algorithm 1 in python.
