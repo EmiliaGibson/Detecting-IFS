@@ -15,7 +15,10 @@ This repository is structured as follows:
 ├── README.md
 ├── examples.py
 ├── requirements.txt
-└──  utils.py
+└── Utils
+│   ├── utils_surfaces.py
+│   ├── utils_mc.py
+│   └── utils_hdi_ifs.npy
 ```
 ### Data
 This folder contains the datasets of the following examples which were used: Curvilinear Sierpinski, Sierpinski and Henon. An additional example containing a faimily of logistic maps is also included.
