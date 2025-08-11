@@ -1,6 +1,6 @@
 # Detecting-IFS
 
-This repository contains code written for investigations into the detection and separation of IFS from data. This research was part of an MSci thesis in Mathematics.
+This repository contains code written for investigations into the detection and separation of IFS from data. 
 
 ## Usage 
 This repository is structured as follows:
@@ -12,13 +12,14 @@ This repository is structured as follows:
 │   ├── Henon-data.npy
 │   ├── Logistic-data.npy
 │   └── Sierpinski-data.npy
-├── README.md
-├── examples.py
-├── requirements.txt
 ├── Utils
 │   ├── utils_surfaces.py
 │   ├── utils_mc.py
 │   └── utils_hdi_ifs.npy
+├── README.md
+├── examples.py
+└── requirements.txt
+
 ```
 ### Data
 This folder contains the datasets of the following examples which were used: Curvilinear Sierpinski, Sierpinski and Henon. An additional example containing a faimily of logistic maps is also included.
