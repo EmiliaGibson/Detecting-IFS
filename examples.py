@@ -27,7 +27,7 @@ dataset_kwargs = {
     },
     'Henon-data.npy': {
         "delay":3,
-        "observation_function": y_cooordinate,
+        "observation_function": y_coordinate,
         "delta":0.1,
         "theta":0.05
     }
