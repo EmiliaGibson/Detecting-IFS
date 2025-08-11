@@ -112,7 +112,7 @@ for _ in range(1000):
          break
 
 
-
+model.eval()
 N=10000 #sample trajectory
 MC = []
 for i in range(N):
