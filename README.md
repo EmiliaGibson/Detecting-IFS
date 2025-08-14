@@ -24,11 +24,14 @@ This repository is structured as follows:
 ### Data
 This folder contains the datasets of the following examples which were used: Curvilinear Sierpinski, Sierpinski and Henon. An additional example containing a faimily of logistic maps is also included.
 
-### utils
-`utils.py` contains the function `find_surfaces` which implements Algorithm 1 in python.
+### Utils
+This folder contains utility functions for each of the different stages.
+- utils_surfaces.py has helper functions for separating different manifolds.
+- utils_mc.py implements Algorithm 1.
+- utils_hdi_ifs learns an analytic model representation using hidden dynamic inference.
 
 ### Examples
-`examples.py` can be run to reproduce Figures 1, 2 and 3
+`examples.py` can be run to reproduce the numerical examples given in section 5.
 
 ### Requirements
 `requirements.txt` lists the versions of the python packages used in this repository and can be used to create a virtual environment.
