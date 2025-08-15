@@ -17,8 +17,7 @@ This repository is structured as follows:
 │   ├── utils_mc.py
 │   └── utils_hdi_ifs.npy
 ├── README.md
-├── examples.py
-└── requirements.txt
+└── examples.py
 
 ```
 ### Data
@@ -33,5 +32,3 @@ This folder contains utility functions for each of the different stages.
 ### Examples
 `examples.py` can be run to reproduce the numerical examples given in section 5.
 
-### Requirements
-`requirements.txt` lists the versions of the python packages used in this repository and can be used to create a virtual environment.
