@@ -1,5 +1,3 @@
-#lets start by believing the world is polynomial
-#%%
 # model 
 import numpy as np
 import torch
@@ -99,44 +97,10 @@ class HDI_Discrete(nn.Module):
                 input = inputs[torch.argmin(torch.abs(inputs[:,0]- data[self.M+1+i]))]
                 outputs[i] = input
             if self.training == True:
-                if i % 5 == 0:
-                # if torch.abs(input[0])>torch.max(torch.abs(data)):
-                    input[0] = data[self.M+1+i]
+                input[0] = data[self.M+1+i]
         return outputs
 
 
 
-#%%
 
 
-# def MSE(outputs, targets):
-#     return np.mean(np.square(outputs-targets[1:]))
-
-# def regularization(poly_coeffs, powers, reg_coef):
-#     data_loss = 0
-#     for j in range(poly_coeffs.shape[1]):
-#             # sp = np.sign(poly_coeffs[:,j])
-#             sqn = np.sqrt(1+powers[j].sum())
-#             data_loss += (reg_coef*sqn *np.abs(poly_coeffs[:,j])).sum()
-#     return data_loss
-
-
-# # input = np.array([targets[0]] + list(np.ones(M)))
-
-# def prop(input, poly_coeffs, powers,N):
-#     outputs = np.zeros(N-1)
-#     for i in range(N-1):
-#         input = iterate_forward(input, poly_coeffs, powers)
-#         outputs[i] = input[0]
-
-#     return outputs
-
-
-
-
-
-         
-
-    
-
-# %%
