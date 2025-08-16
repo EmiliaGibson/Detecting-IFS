@@ -1,3 +1,5 @@
+#lets start by believing the world is polynomial
+#%%
 # model 
 import numpy as np
 import torch
@@ -38,9 +40,9 @@ class HDI_Discrete(nn.Module):
             element in a row of  poly_coeffs
         '''
         super(HDI_Discrete, self).__init__()
-        poly_coeffs = np.random.uniform(-1,1,size=(k,M+1,comb(M+1+d,d)))
-        poly_coeffs[:,:,0] = 1
-        self.poly_coeffs = torch.nn.Parameter(torch.tensor(0.5*poly_coeffs,dtype=torch.double))
+        poly_coeffs = 0.5*np.random.uniform(-1,1,size=(k,M+1,comb(M+1+d,d)))
+        # poly_coeffs[:,:,0] = 0.5
+        self.poly_coeffs = torch.nn.Parameter(torch.tensor(poly_coeffs,dtype=torch.double))
         powers = np.array(tuple([ x for x in product(range(d+1),repeat = M+1) if sum(x)<= d]) )
         powers = powers[np.argsort(powers.sum(axis=1))]
         self.powers = torch.tensor(powers, dtype=torch.int32)
@@ -90,17 +92,54 @@ class HDI_Discrete(nn.Module):
             if isinstance(jump_chain[i],int):
                 input = self.forward(input,jump_chain[i])
                 outputs[i] = input
-            else:
+            else:  
                 inputs = torch.zeros(self.k,self.M+1)
                 for j in range(self.k):
                     inputs[j] = self.forward(input,j)
                 input = inputs[torch.argmin(torch.abs(inputs[:,0]- data[self.M+1+i]))]
                 outputs[i] = input
-            if self.training == True:
-                input[0] = data[self.M+1+i]
+
+            #  forcing step below can be switched off for Sierpinski, 
+                    # chaotic Henon map requires forcing to find reasonable model
+            # if self.training == True: # only force in training
+            #     if i%25==0:
+            #         input[0] = data[self.M+1+i]
+
         return outputs
 
 
 
+#%%
 
 
+# def MSE(outputs, targets):
+#     return np.mean(np.square(outputs-targets[1:]))
+
+# def regularization(poly_coeffs, powers, reg_coef):
+#     data_loss = 0
+#     for j in range(poly_coeffs.shape[1]):
+#             # sp = np.sign(poly_coeffs[:,j])
+#             sqn = np.sqrt(1+powers[j].sum())
+#             data_loss += (reg_coef*sqn *np.abs(poly_coeffs[:,j])).sum()
+#     return data_loss
+
+
+# # input = np.array([targets[0]] + list(np.ones(M)))
+
+# def prop(input, poly_coeffs, powers,N):
+#     outputs = np.zeros(N-1)
+#     for i in range(N-1):
+#         input = iterate_forward(input, poly_coeffs, powers)
+#         outputs[i] = input[0]
+
+#     return outputs
+
+
+
+
+
+         
+
+    
+
+# %%
