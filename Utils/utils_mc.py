@@ -1,7 +1,6 @@
 #%%
 import numpy as np
 import networkx as nx
-from utils.markovchain1 import MarkovChain
 from collections import deque
 import pandas as pd
 import igraph as ig
