@@ -101,45 +101,8 @@ class HDI_Discrete(nn.Module):
 
             #  forcing step below can be switched off for Sierpinski, 
                     # chaotic Henon map requires forcing to find reasonable model
-            # if self.training == True: # only force in training
-            #     if i%25==0:
-            #         input[0] = data[self.M+1+i]
+            if self.training == True: # only force in training
+                if i%3==0:
+                    input[0] = data[self.M+1+i]
 
         return outputs
-
-
-
-#%%
-
-
-# def MSE(outputs, targets):
-#     return np.mean(np.square(outputs-targets[1:]))
-
-# def regularization(poly_coeffs, powers, reg_coef):
-#     data_loss = 0
-#     for j in range(poly_coeffs.shape[1]):
-#             # sp = np.sign(poly_coeffs[:,j])
-#             sqn = np.sqrt(1+powers[j].sum())
-#             data_loss += (reg_coef*sqn *np.abs(poly_coeffs[:,j])).sum()
-#     return data_loss
-
-
-# # input = np.array([targets[0]] + list(np.ones(M)))
-
-# def prop(input, poly_coeffs, powers,N):
-#     outputs = np.zeros(N-1)
-#     for i in range(N-1):
-#         input = iterate_forward(input, poly_coeffs, powers)
-#         outputs[i] = input[0]
-
-#     return outputs
-
-
-
-
-
-         
-
-    
-
-# %%
