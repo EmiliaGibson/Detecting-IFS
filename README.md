@@ -36,4 +36,4 @@ This folder contains utility functions for each of the different stages.
 Set key = 0 for Curvlinear Sierpinski IFS (default) or key = 1 for Henon IFS.
 
 ### Requirements
-Text file containing the required python packages and versions used in this repository.
+`requirements.txt' lists the required python packages and versions used in this repository.
