@@ -1,6 +1,7 @@
 # Detecting-IFS
 
 This repository contains code written for investigations into the detection and separation of IFS from data. 
+Developed using python 3.11.6.
 
 ## Usage 
 This repository is structured as follows:
@@ -17,7 +18,8 @@ This repository is structured as follows:
 │   ├── utils_mc.py
 │   └── utils_hdi_ifs.npy
 ├── README.md
-└── examples.py
+├── examples.py
+└── requirements.txd
 
 ```
 ### Data
@@ -31,4 +33,7 @@ This folder contains utility functions for each of the different stages.
 
 ### Examples
 `examples.py` can be run to reproduce the numerical examples given in section 5.
+Set key = 0 for Curvlinear Sierpinski IFS (default) or key = 1 for Henon IFS.
 
+### Requirements
+Text file containing the required python packages and versions used in this repository.
