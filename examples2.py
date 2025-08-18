@@ -5,8 +5,6 @@ import pandas as pd
 import torch
 import torch.optim as optim
 import igraph as ig
-import os
-os.chdir('/Users/ejg19/Library/CloudStorage/OneDrive-ImperialCollegeLondon/PhD/M4R cont/Github/Partial_observations')
 from utils.utils_surfaces import find_surfaces_adaptive
 from utils.utils_mc import transition_matrix, unembed_MC, get_original_MC
 from utils.utils_hdi_ifs import HDI_Discrete
@@ -18,26 +16,28 @@ datasets = ['Curvilinear-Sierpinski-data.npy','Henon-data.npy']
 def y_coordinate(x):
     return x[:,1]
 
-def identity(x):
-    return x
+def x_coordinate(x):
+    return x[:,0]
 
 dataset_kwargs = {
     'Curvilinear-Sierpinski-data.npy': {
         "delay":3,
         "observation_function": y_coordinate,
         "delta":0.15,
-        "theta":0.2 
+        "theta":0.2,
+        "min_s":1000
     },
     'Henon-data.npy': {
         "delay":3,
-        "observation_function": y_coordinate,
-        "delta":0.02,
-        "theta":0.1
+        "observation_function": x_coordinate,
+        "delta":0.04,
+        "theta":0.1,
+        "min_s":2000
     }
 }
 
 # choose dataset 0 = curvilinear sierpisnki, 1 = henon
-key = 1
+key = 0
 assert key in [0,1]
 dataset = datasets[key]
 data = np.load('Data/'+datasets[key])
@@ -56,7 +56,7 @@ plt.show()
 
 embedded_data = np.column_stack([observed_data[i:len(observed_data)+1-(delay)+i] for i in range(delay)]) #delay embed data
 
-surfaces = find_surfaces_adaptive(pd.DataFrame(embedded_data), delta_min = delta,theta_min=theta,theta_max=2*theta,min_s=1000, break_theta=15)
+surfaces = find_surfaces_adaptive(pd.DataFrame(embedded_data), delta_min = delta,theta_min=theta,theta_max=2*theta,min_s=min_s, break_theta=15)
 
 
 fig = plt.figure(figsize=(6,6))
@@ -100,9 +100,9 @@ print(original_TM)
 #       fit HDI model
 #######################################
 
-N = [1000,8000] #length of training trajectory
+N = [1000,2000] #length of training trajectory
 Maps = original_TM.shape[0]
-LRs = [0.05,0.05] #learning rate
+LRs = [0.05,0.01] #learning rate
 Degree_poly = [3,2]
 Epochs = [1000,1000]
 
@@ -144,7 +144,7 @@ for _ in range(200):
 
 
 
-
+#%%
 #######################################
 #  Plot sample trajectory of new IFS
 #######################################
@@ -159,7 +159,6 @@ for i in range(N):
 out = model.prop(X_train_tensor[:2].flip(0),MC,N, X_train_tensor)
 out = out.detach().numpy()
 
-                                                                                                                        #%%
 fig = plt.figure()
 ax = plt.axes(projection='3d')
 ax.scatter(out[:-2,0], out[1:-1,0], out[2:,0], s=2, c=MC[1:-3] , cmap = 'tab20')
