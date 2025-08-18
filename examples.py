@@ -41,7 +41,7 @@ key = 0
 assert key in [0,1]
 dataset = datasets[key]
 data = np.load('Data/'+datasets[key])
-delay, observation_function, delta, theta  = dataset_kwargs[dataset].values()
+delay, observation_function, delta, theta, min_s  = dataset_kwargs[dataset].values()
 
 observed_data = observation_function(data) #apply observation function to dataset
 
