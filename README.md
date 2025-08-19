@@ -1,6 +1,7 @@
 # Detecting-IFS
 
-This repository contains code written for investigations into the detection and separation of IFS from data. 
+This repository contains code written for the numerical experiments found in the following article: 
+_Learning iterated function systems from time series of partial observations._
 Developed using python 3.11.6.
 
 ## Usage 
@@ -37,3 +38,5 @@ Set key = 0 for Curvlinear Sierpinski IFS (default) or key = 1 for Henon IFS.
 
 ### Requirements
 `requirements.txt` lists the required python packages and versions used in this repository.
+
+
