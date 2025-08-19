@@ -34,7 +34,7 @@ This folder contains utility functions for each of the different stages.
 
 ### Examples
 `examples.py` can be run to reproduce the numerical examples given in section 5.
-Set key = 0 for Curvlinear Sierpinski IFS (default) or key = 1 for Henon IFS.
+Set `key = 0` for Curvlinear Sierpinski IFS (default) or `key = 1` for Henon IFS.
 
 ### Requirements
 `requirements.txt` lists the required python packages and versions used in this repository.
