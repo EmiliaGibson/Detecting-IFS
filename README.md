@@ -12,8 +12,6 @@ This repository is structured as follows:
 ├── Data
 │   ├── Curvilinear-Sierpinski-data.npy
 │   ├── Henon-data.npy
-│   ├── Logistic-data.npy
-│   └── Sierpinski-data.npy
 ├── Utils
 │   ├── utils_surfaces.py
 │   ├── utils_mc.py
